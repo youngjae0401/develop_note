@@ -2,8 +2,8 @@ title:              개발노트
 email:              joyoungjae0401@gmail.com
 description:        되새기는 개발노트
 author:             ""
-baseurl:            ""
-url:                "https://youngjae0401.github.io/develop_note/"
+baseurl:            "/develop_note"
+url:                "https://youngjae0401.github.io"
 
 # Social Profiles
 twitter_username:   
