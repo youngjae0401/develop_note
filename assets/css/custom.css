@@ -11,6 +11,36 @@ img {
     margin-top: 100px;
 }
 
+#popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+#popup .content {
+    width: 70%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+body.popup {
+    overflow: hidden;
+}
+
+body.popup #popup {
+    display: block;
+}
+
+.image {
+    cursor: zoom-in;
+}
+
 .text-line-through {
     text-decoration: line-through;
 }
