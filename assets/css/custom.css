@@ -44,6 +44,10 @@ body.popup #popup {
     cursor: zoom-in;
 }
 
+.comments {
+    margin-top: 60px;
+}
+
 .text-line-through {
     text-decoration: line-through;
 }
