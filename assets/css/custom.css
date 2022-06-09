@@ -2,6 +2,15 @@ body {
     font-size: 16px;
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
 img {
     display: block;
     width: 100%;
@@ -46,6 +55,28 @@ body.popup #popup {
 
 .comments {
     margin-top: 60px;
+}
+
+.table {
+    width: 100%;
+}
+
+.table th,
+.table td {
+    color: #586069;
+}
+
+.sub-title {
+    padding-left: 10px;
+    border-left: 6px solid #3F48CC;
+}
+
+.content {
+    margin-bottom: 20px;
+}
+
+.text-center {
+    text-align: center;
 }
 
 .text-line-through {
