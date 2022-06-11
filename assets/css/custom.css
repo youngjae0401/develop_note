@@ -1,5 +1,53 @@
+@font-face {
+    font-family:    'spoqa';
+    font-weight:    100;
+    src:            url('../font/SpoqaHanSansNeo-Thin.eot'),
+                    url('../font/SpoqaHanSansNeo-Thin.woff'),
+                    url('../font/SpoqaHanSansNeo-Thin.woff2');
+}
+
+@font-face {
+    font-family:    'spoqa';
+    font-weight:    300;
+    src:            url('../font/SpoqaHanSansNeo-Light.eot'),
+                    url('../font/SpoqaHanSansNeo-Light.woff'),
+                    url('../font/SpoqaHanSansNeo-Light.woff2');
+}
+
+@font-face {
+    font-family:    'spoqa';
+    font-weight:    400;
+    src:            url('../font/SpoqaHanSansNeo-Regular.eot'),
+                    url('../font/SpoqaHanSansNeo-Regular.woff'),
+                    url('../font/SpoqaHanSansNeo-Regular.woff2');
+}
+
+@font-face {
+    font-family:    'spoqa';
+    font-weight:    500;
+    src:            url('../font/SpoqaHanSansNeo-Medium.eot'),
+                    url('../font/SpoqaHanSansNeo-Medium.woff'),
+                    url('../font/SpoqaHanSansNeo-Medium.woff2');
+}
+
+@font-face {
+    font-family:    'spoqa';
+    font-weight:    700;
+    src:            url('../font/SpoqaHanSansNeo-Bold.eot'),
+                    url('../font/SpoqaHanSansNeo-Bold.woff'),
+                    url('../font/SpoqaHanSansNeo-Bold.woff2');
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, body {
+    font-family: 'spoqa',Arial,sans-serif !important;
+}
+
 body {
-    font-size: 16px;
+    font-size: 1rem;
+}
+
+h4 {
+    font-size: 1.4rem;
 }
 
 ul {
@@ -67,8 +115,7 @@ body.popup #popup {
 }
 
 .sub-title {
-    padding-left: 10px;
-    border-left: 6px solid #3F48CC;
+    color: #3d2ff3;
 }
 
 .content {
