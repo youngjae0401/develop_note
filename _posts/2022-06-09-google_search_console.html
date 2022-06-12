@@ -21,35 +21,35 @@ background: '/img/posts/06.jpg'
 <h3>2.</h3>
 <p><img src="{{"/img/posts/20220609/2.png" | relative_url }}" alt="과정2" class="image"></p>
 <p>URL 접두어를 선택하였고, URL 입력 후 계속</p>
-<p>
+<div class="article">
     <h4 class="sub-title">도메인</h4>
     <div class="content">
         모든 하위 도메인(m, www 등)과 여러 프로토콜(http, https, ftp)을 포함하며 DNS 레코드 인증만 지원한다.
     </div>
     <div class="content">
         <div>ex.</div>
-        <ul>
+        <ul class="list">
             <li>http://example.com/dresses/1234 (o)</li>
             <li>https://example.com/dresses/1234 (o)</li>
             <li>http://www.example.com/dresses/1234 (o)</li>
             <li>http://support.m.example.com/dresses/1234 (o)</li>
         </ul>
     </div>
-</p>
-<p>
+</div>
+<div class="article">
     <h4 class="sub-title">URL 접두어</h4>
     <div class="content">
         프로토콜(http/https)을 포함하여 지정된 접두사가 있는 URL만 포함하며 다양한 인증 방식을 지원하지만 필자는 HTML 태그 인증으로 진행했다.
     </div>
     <div class="content">
         <div>ex.</div>
-        <ul>
+        <ul class="list">
             <li>http://example.com/dresses/1234 (o)</li>
             <li>https://example.com/dresses/1234 (x) → http가 일치하지 않음</li>
             <li>http://www.example.com/dresses/1234 (x) → www.이 일치하지 않음</li>
         </ul>
     </div>
-</p>
+</div>
 
 <hr>
 
