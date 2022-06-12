@@ -136,6 +136,10 @@ body.popup #popup {
     margin-bottom: 3%;
 }
 
+.sub-title a {
+    color: #3d2ff3;
+}
+
 .point-title {
     padding-left: 1.2%;
     border-left: 4px solid #B5B5B5;
