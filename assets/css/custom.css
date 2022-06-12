@@ -43,25 +43,25 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, body {
 }
 
 body {
-    font-size: 1.2vw;
+    font-size: 100%;
 }
 
 h4 {
-    font-size: 1.6vw;
+    font-size: 130%;
 }
 
 h5 {
-    font-size: 1.4vw;
+    font-size: 110%;
 }
 
 .list {
     margin: 0;
     padding: 0;
-    padding-left: 2.6vw;
+    padding-left: 6%;
 }
 
 .list li {
-    margin-top: 1.2vh;
+    margin-top: 3.2%;
 }
 
 .list li:first-child {
@@ -124,7 +124,7 @@ body.popup #popup {
 }
 
 .article {
-    margin-top: 4.2vh;
+    margin-top: 10%;
 }
 
 .article:first-child {
@@ -133,17 +133,17 @@ body.popup #popup {
 
 .sub-title {
     color: #3d2ff3;
-    margin-bottom: 2vh;
+    margin-bottom: 3%;
 }
 
 .point-title {
-    padding-left: 0.6vw;
-    border-left: 0.4vw solid #B5B5B5;
-    margin-bottom: 1.6vh;
+    padding-left: 1.2%;
+    border-left: 4px solid #B5B5B5;
+    margin-bottom: 2%;
 }
 
 .content {
-    margin-top: 2.6vh;
+    margin-top: 3%;
 }
 
 .content:first-child {
@@ -163,4 +163,19 @@ body.popup #popup {
 
 .text-line-through {
     text-decoration: line-through;
+}
+
+.m-t-3 {
+    margin-top: 3%;
+
+}
+
+.m-t-4 {
+    margin-top: 3%;
+
+}
+
+.m-t-5 {
+    margin-top: 3%;
+
 }
