@@ -42,6 +42,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, body {
     font-family: 'spoqa',Arial,sans-serif !important;
 }
 
+pre code {
+    color: #e83e8c;
+}
+
 body {
     font-size: 100%;
 }
