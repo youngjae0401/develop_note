@@ -61,7 +61,7 @@ h5 {
 }
 
 .list li {
-    margin-top: 3.2%;
+    margin-top: 1%;
 }
 
 .list li:first-child {
@@ -148,6 +148,7 @@ body.popup #popup {
 
 .content {
     margin-top: 3%;
+    line-height: 2rem;
 }
 
 .content:first-child {
@@ -181,5 +182,8 @@ body.popup #popup {
 
 .m-t-5 {
     margin-top: 3%;
+}
 
+.m-t-8 {
+    margin-top: 8%;
 }
