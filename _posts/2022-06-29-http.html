@@ -1,0 +1,263 @@
+---
+layout: post
+title: "HTTP 란?"
+subtitle: ""
+date: 2022-06-29 22:26:00 +0900
+background: '/img/posts/06.jpg'
+---
+
+<div class="article">
+    <h4 class="sub-title">HTTP(Hyper Text Transfer Protocol)</h4>
+    <div class="content">
+        클라이언트와 서버간의 데이터(텍스트, 오디오, 비디오, 이미지 등)를 주고 받게 해주는 TCP/IP 기반의 프로토콜이며, 기본 80포트를 사용한다.<br>
+        웹의 아버지라 불리는 Tim Bernes-Lee에 의해 발명되었다. 초기에는 Mesh 라고 불렸으며, 이후 개발 과정 중에 World Wide Web(WWW) 으로 이름을 바꾸었다.
+        아래 4개의 블록으로 구성되어 있다.
+        <ol class="list">
+            <li>하이퍼텍스트 문서를 표현하기 위한 마크업 언어(HTML)</li>
+            <li>문서를 교환하기 위한 간단한 프로토콜(HTTP)</li>
+            <li>문서를 디스플레이 해주는 클라이언트(Web Browser)</li>
+            <li>문서에 접근하도록 해주는 서버(httpd)</li>
+        </ol>
+    </div>
+</div>
+
+<div class="article">
+    <h4 class="sub-title">HTTP 특징</h4>
+    <ul class="list">
+        <li>
+            클라이언트 서버 구조
+            <ul class="list">
+                <li>서버가 요청(request)에 대한 결과를 만들어서 응답이 오면 클라이언트가 응답(response) 결과를 열어서 동작을 하게된다.</li>
+            </ul>
+        </li>
+        <li>
+            무상태(Stateless)
+            <ul class="list">
+                <li>서버가 클라이언트의 상태를 보존하지 않는다.</li>
+                <li>서버 확장성이 높다는 장점이 있고, 클라이언트가 추가 데이터를 전송해야하는 단점이 있다.</li>
+            </ul>
+        </li>
+        <li>
+            비연결성(Connectionless)
+            <ul class="list">
+                <li>클라이언트가 서버에 요청을 보내고 응답을 받게되면 바로 클라이언트와 서버의 연결을 끊어버린다.</li>
+                <li>수 천명이 서비스를 사용해도 실제 서버에서 동시에 처리하는 요청은 수 십개 이하로 작으므로 서버 자원을 효율적으로 사용할 수 있다.</li>
+            </ul>
+        </li>
+        <li>
+            http 메세지(추후 포스팅 예정)
+        </li>
+    </ul>
+</div>
+
+<div class="article">
+    <h4 class="sub-title">HTTP 동작 과정</h4>
+    <ol class="list">
+        <li>사용자가 웹 브라우저에 접속한다.</li>
+        <li>DNS 서버에 웹 서버의 호스트 이름을 IP주소로 변경한다.</li>
+        <li>
+            웹 서버와 TCP 연결을 시도한다.(3-way handshake: 클라이언트 - 서버간에 신뢰성 있는 연결을 위해 3번의 패킷 교환 과정)
+            <ol class="list">
+                <li>클라이언트 → 서버(SYN): 클라이언트는 서버와 커넥션을 연결하기 위해 패킷(SYN(x))을 전송한다.</li>
+                <li>서버 → 클라이언트(ACK + SYN): 서버는 클라이언트에서 전송한 패킷(SYN(x))을 받고 클라이언트에게 받았다는 신호인 ACK(x+1)와 SYN(y) 패킷을 전송한다.</li>
+                <li>클라이언트 → 서버(ACK): 클라이언트는 서버의 응답 패킷(ACK(x+1) + SYN(y))을 받고 ACK(y+1)를 서버로 전송한다.</li>
+            </ol>
+        </li>
+        <li>클라이언트가 서버에 데이터를 요청(REQUEST)한다.</li>
+        <li>서버가 클라이언트에게 응답(RESPONSE)한다. </li>
+        <li>
+            서버와 클라이언트 간의 연결 종료한다.(4-way handshaking: 클라이언트 - 서버간에 연결을 해제하는 4번의 패킷 교환 과정)
+            <ol class="list">
+                <li>클라이언트 → 서버(FIN(+ACK)): 클라이언트는 서버에게 연결을 종료한다는 FIN 패킷(ACK 포함)을 전송한다.</li>
+                <li>서버 → 클라이언트(ACK): 서버는 FIN을 받고 확인했다는 ACK를 클라이언트에게 전송하고 자신의 통신이 끝날 때까지 기다린다.(TIME_WAIT 상태)</li>
+                <li>서버 → 클라이언트(FIN): 데이터를 모두 전송했다면 서버는 연결이 종료됐다는 의미로 FIN 패킷을 클라이언트에게 전송한 후 승인번호를 줄 때까지 기다린다.(LAST_ACK 상태)</li>
+                <li>클라이언트 → 서버(ACK): 클라이언트는 FIN을 받고 확인했다는 ACK 패킷을 전송한다.</li>
+            </ol>
+        </li>
+        <li>웹 브라우저가 웹 문서를 출력한다.</li>
+    </ol>
+</div>
+
+<div class="article">
+    <h4 class="sub-title">HTTP 메시지</h4>
+    <div class="content">
+        클라이언트에서 서버로 데이터를 보내는 것은 요청(REQUEST), 서버에서 클라이언트로 데이터를 보내는 것은 응답(RESPONSE)이라고 한다.<br>
+        이 요청과 응답은 시작줄, 헤더, 엔터티 본문으로 구성된다. 그리고 시작줄, 헤더, 엔터티는 줄바꿈으로 구분된다.
+    </div>
+    <ul class="list">
+        <li>
+            <span class="text-bold">요청 메시지(Request Message)</span>
+            <ul class="list">
+                <li>
+                    <div class="text-bold">메소드(Method)</div>
+                    첫 줄에는 클라이언트가 무엇을, 어떻게 처리하고자 한다는 정보가 담겨 있는데 이 때 메서드는 "어떻게", 즉 처리 방식에 해당한다.<br>
+                    다시 말해서 클라이언트가 서버에게 데이터를 요청하고, 요청하는 데이터에 수행하고자 하는 동작을 나타낸다. <br>
+                    메서드의 종류는 아래와 같다.
+                    <ul class="list">
+                        <li>GET: 존재하는 자원에 대한 요청</li>
+                        <li>POST: 새로운 자원을 생성</li>
+                        <li>PUT: 존재하는 자원에 대한 변경</li>
+                        <li>DELETE: 존재하는 자원에 대한 삭제</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="text-bold">경로(URL)</div>
+                    메서드가 "어떻게"에 해당한다면, 경로는 메서드를 참고하여 수행할 대상, 즉 "무엇을"에 해당한다. 주로 가져오려는 리소스의 경로를 표시하며 형태는 "https://www.google.com"처럼 완전한 형식,
+                    "/index.html"처럼 상대적인 형식 등 메서드의 유형에 따라 다양한 포맷이 있다.
+                </li>
+                <li>
+                    <div class="text-bold">프로토콜 버전(Vesion of protocol)</div>
+                    HTTP 프로토콜의 버전을 표시한다. 현재는 1.1버전과 2버전이 주를 이루고 있다.
+                </li>
+                <li>
+                    <div class="text-bold">헤더(Headers)</div>
+                    서버에 대한 추가 정보를 전달한다. 주로 호스트의 정보나 접속하고 있는 사용자의 정보, 그리고 접속하려고 하는 페이지의 정보 등을 확인할 수 있다.
+                    <ul class="list">
+                        <li>user-agent: 웹 브라우저의 다른 표현. 요청하는 웹 브라우저의 정보 및 운영체제를 표시한다.</li>
+                        <li>accept-encoding: 클라이언트가 이해할 수 있는 압축 방식을 표시한다. accept-encoding을 표기하여 서버에게 전송하면 서버는 필요한 경우 리소스를 압축하여 반환한다.</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="text-bold">공백 라인(Empty Line)</div>
+                    공백 라인은 헤더와 본문을 구분하는 역할이다. 빈 줄이 없으면 메시지를 읽을 때 어디까지가 헤더이며 어디부터가 본문인지를 파악할 수 없기 때문에 중요한 요소이다.
+                </li>
+                <li>
+                    <div class="text-bold">본문(Request Message Body)</div>
+                    메시지의 가장 마지막에 들어가는 컨텐츠이다. 다만 다른 컨텐츠와는 다르게 본문은 필수 요소는 아니다. 메서드가 GET, HEAD, DELETE, OPTIONS 처럼 리소스를 가져오는 요청은 보통 본문이 필요 없기 때문이다.<br>
+                    따라서 POST처럼 서버에 새로운 자원을 추가해야 하는 경우에 그 정보를 본문에 작성하여 전달한다.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <span class="text-bold">응답 메시지(Response Message)</span>
+            <ul class="list">
+                <li>
+                    <div class="text-bold">프로토콜 버전(Vesion of protocol)</div>
+                    요청 메시지와 동일하며 HTTP 프로토콜의 버전을 나타낸다.
+                </li>
+                <li>
+                    <div class="text-bold">상태 코드(Status code)</div>
+                    상태 코드는 클라이언트 요청의 성공 여부를 숫자로 나타낸 것이며, 상태 메시지는 상태 코드를 이해하기 쉽게 영어로 풀어쓴 메시지이다.
+                    상태 코드와 상태 메시지는 100번대부터 500번대까지 존재하는데 그 중 우리가 가장 자주 접하는 코드는 성공했을 때 나오는 200번대, 웹 브라우저 측에서 오류가 발생했을 때 나오는 400번대이다.<br>
+                    크게 5개로 나타내는 상태코드는 아래와 같다.(자세한 상태 코드는 <a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Status" target="_blank">링크</a> 참조)
+                    <ul class="list">
+                        <li>1xx(조건부 응답): 요청을 받았으며 작업을 계속한다.</li>
+                        <li>2xx(성공): 정상적으로 요청을 수행했을 때 나타내는 코드이다.</li>
+                        <li>3xx(리다이렉션 완료): 클라이언트가 요청을 마치기 위해 추가 동작을 취해야할 때 나타난다.</li>
+                        <li>4xx(요청 오류): 클라이언트의 요청에 오류가 있을 때 나타내는 코드이다.</li>
+                        <li>5xx(서버 오류): 서버가 들어온 요청을 수행하지 못했을 때 나타내는 코드이다.</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="text-bold">헤더(Headers)</div>
+                    요청 헤더와 유사한 형식으로 추가 정보를 전달한다.
+                    <ul class="list">
+                        <li>content-type: 전달한 리소스의 타입. text/html이라면 텍스트 중에서도 HTML 타입이라는 뜻이며, image/jpeg라면 jpeg 확장자를 가진 이미지임을 의미한다.</li>
+                        <li>content-encoding: 응답 메시지 헤더의 accept-encoding처럼 컨텐츠가 압축된 방식을 표시한다.</li>
+                        <li>date: 해당 메시지가 만들어진 날짜와 시간을 포함한다.</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="text-bold">본문(Body)</div>
+                    가져온 리소스가 표시된다. 만약 리소스 유형이 HTML이라면 &lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt; 형태의 HTML코드가 나타나고, 유형이 이미지 또는 동영상이면 그에 맞는 코드가 표시된다.
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="article">
+    <h4 class="sub-title">HTTP 버전별 특징</h4>
+    <ul class="list">
+        <li>
+            <span class="text-bold">HTTP/0.9</span>
+            <ul class="list">
+                <li>헤더, 상태, 바디, 오류와 같은 개념이 없었고, GET 메소드만이 유일했다.</li>
+                <li>원라인 프로토콜이다.</li>
+            </ul>
+        </li>
+        <li>
+            <span class="text-bold">HTTP/1.0</span>
+            <ul class="list">
+                <li>헤더가 추가되어 메타데이터를 전송할 수 있게 되었다.</li>
+                <li>Content-Type이 존재하여 HTML이 아닌 다른 문서도 전송할 수 있게 되었다.</li>
+                <li>HTTP 버전을 확인할 수 있었다.</li>
+                <li>상태코드가 응답의 시작부분에 붙어 전송되었고, 그 결과에 대한 동작을 할 수 있게 되었다.</li>
+            </ul>
+        </li>
+        <li>
+            <span class="text-bold">HTTP/1.1</span>
+            <ul class="list">
+                <li>HTTP의 첫번째 표준 버전이다.</li>
+                <li>여러 요청이 하나의 커넥션을 통해 처리할 수 있게 되었다.</li>
+                <li>
+                    하나의 커텍션에서 응답을 기다리지 않고 순차적인 여러 요청을 연속적으로 보내 그 순서에 맞춰 응답을 받는 방식으로, 지연 시간을 줄이는 방법인 Pipelining이 도입되었다.<br>
+                    하지만 아래와 같이 문제점이 있다.
+                    <ul class="list">
+                        <li>Head Of Line Blocking, 앞 요청의 시간이 오래 걸리면 뒤에 오는 요청도 해당 요청이 처리될 때까지 기다려야하는 현상이다.</li>
+                        <li>Header 구조의 중복, 연속된 요청의 경우 Header 값이 같은 경우가 많음에도 불구하고 중복된 값을 그대로 전송하는 현상이다. 주고 받는 데이터가 불필요하게 커진다.</li>
+                    </ul>
+                </li>
+                <li>커넥션이 재사용될 수 있도록 사용된 커넥션을 유지하여 시간을 절약하게 되었다.(Keep-Alive)</li>
+                <li>캐시 제어 메커니즘이 도입되었다.(ETag)</li>
+                <li>동일 IP 주소에 다른 도메인을 호스트하는 기능 가능해졌다.(HOST header)</li>
+            </ul>
+        </li>
+        <li>
+            <span class="text-bold">HTTP/2</span>
+            <ul class="list">
+                <li>
+                    기존 버전의 성능 향상에 초점을 맞춘 프로토콜이다. 즉, 표준의 대체가 아닌 확장을 목적으로 한다.
+                </li>
+                <li>
+                    요청과 응답의 멀티플렉싱을 지원한다.
+                    <ul class="list">
+                        <li>바이너리 프레이밍 계층을 사용하여, 파싱과 전송 속도를 높이고 오류 발생 가능성을 줄인다.</li>
+                        <li>메시지를 프레임이라는 단위(헤더스 프레임, 데이타 프레임)로 분할하고, 이를 바이너리로 인코딩한다.</li>
+                        <li>하나의 TCP 커넥션만으로 해당 웹 페이지의 모든 요청과 응답 데이터를 전송하며, 바이너리 프레임의 스트림 전송 방식을 통해 응답 순서에 무관하게 데이터를 처리한다.</li>
+                        <li>HTTP/1.1의 Pipelining과 멀티플렉싱의 가장 큰 차이는 순차적 응답 처리에 따른 HOLB(Head Of Line Blocking)를 완벽하게 해결했다는 것이다.</li>
+                    </ul>
+                </li>
+                <li>
+                    먼저 응답 받고 싶은 요청의 우선순위(Stream Priority)를 지정할 수 있다.
+                </li>
+                <li>
+                    HTTP 헤더 데이터 압축 기능이 추가되어 페이지 로드 시간을 줄였다.
+                    <ul class="list">
+                        <li>Header table과 Huffman Encoding 기법을 사용하여 Header 정보를 압축(HPACK 압축 방식)한다.</li>
+                        <li>HPACK 알고리즘으로는 Header 크기를 약 85%로 압축할 수 있다고 한다.</li>
+                    </ul>
+                </li>
+                <li>
+                    Server Push 기술 도입이 되었다.
+                    <ul class="list">
+                        <li>클라이언트가 요청할 것으로 예상되는 리소스를 클라이언트가 요청하지 않아도 알아서 서버에서 Push해서 보내준다.</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <span class="text-bold">HTTP/3</span>
+            <ul class="list">
+                <li>
+                    UDP 기반의 프로토콜을 사용한다.(정확하게는 QUIC)
+                    <ul>
+                        <li>"HTTP over QUIC"이라고 표현하고 줄여서 HQ라고 한다.</li>
+                        <li>
+                            HTTP/2에 있는 프레임, 스트림, 메시지 구조와 기술들은 그대로 HTTP/3로 승계되었고 명칭만 HQframe, QPACK 등으로 변경되었다.
+                        </li>
+                        <li><a href="https://caniuse.com/?search=HTTP%2F3" target="_blank">지원하는 브라우저</a>는 링크를 참조</li>
+                    </ul>
+                </li>
+                <li>UDP는 데이터 신뢰성을 보장하지 않지만 QUIC 계층 추가를 통해 TCP와 같은 신뢰성을 제공한다.</li>
+                <li>Handshake를 사용하지 않아서 빠르다.</li>
+                <li>HTTP/2D의 멀티플렉싱과 같이 하나의 연결로 다수의 병렬 스트림으로 데이터를 동시 전송하며 UDP 기반이지만 그와 다르게 TCP와 같은 순서에 맞는 전송 처리를 한다.</li>
+                <li>HTTP/2에서는 여러 스트림 중에 하나의 스트림이 패킷을 잃는 경우 복구가 되지 않았지만 QUIC는 다른 스트림이 전송 중에 잃은 스트림의 패킷을 재전송하여 완료가 가능하다.</li>
+                <li>일반적인 웹 환경에서는 HTTP/2와 차이가 크지 않을 수 있지만, 동영상 서비스 등에서는 큰 차이를 보인다.</li>
+            </ul>
+        </li>
+    </ul>
+    <div class="content">
+        <span class="point-title"><a href="http://www.httpvshttps.com/" class="text-bold" target="_blank">HTTP/1.1 VS HTTP/2 속도를 확인하는 사이트</a></span>
+    </div>
+</div>
