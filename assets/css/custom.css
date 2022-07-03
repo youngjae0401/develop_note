@@ -62,10 +62,11 @@ h5 {
     margin: 0;
     padding: 0;
     padding-left: 6%;
+    margin-top: 1.6%;
 }
 
 .list li {
-    margin-top: 1%;
+    margin-top: 2%;
 }
 
 .list li:first-child {
@@ -172,6 +173,14 @@ body.popup #popup {
 
 .text-line-through {
     text-decoration: line-through;
+}
+
+.text-under-line {
+    text-decoration: underline;
+}
+
+.text-bold {
+    font-weight: 700;
 }
 
 .m-t-3 {
