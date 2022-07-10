@@ -1,0 +1,142 @@
+---
+layout: post
+title: "[Database] Index란?"
+subtitle: ""
+date: 2022-07-10 22:11:00 +0900
+background: '/img/posts/06.jpg'
+---
+
+<div class="article">
+    <h4 class="sub-title">인덱스(Index)란?</h4>
+    <div class="content">
+        데이터의 INSERT, UPDATE, DELETE 작업을 희생하고 저장 공간을 활용하여 데이터베이스 테이블의 검색 속도를 향상시키기 위한 자료구조이다.<br>
+        책의 <span class="bl">색인</span>이라고 생각하면 된다.
+    </div>
+</div>
+
+<div class="article">
+    <h4 class="sub-title">인덱스의 종류</h4>
+    <ul class="list">
+        <li>
+            클러스터 인덱스(Clustered Index)
+            <ul class="list">
+                <li>테이블당 1개만 생성이 가능하다.</li>
+                <li>PK 설정 시 그 컬럼은 자동으로 클러스터 인덱스로 생성된다.</li>
+                <li>물리적으로 행을 재배열한다.</li>
+                <li>인덱스 자체의 리프 페이지가 곧 데이터이다. (인덱스 자체에 데이터가 포함)</li>
+                <li>논 클러스터 인덱스보다 검색 속도는 빠르다. 하지만 데이터의 입력, 수정, 삭제는 느리다.</li>
+                <li>데이터 입력, 수정, 삭제 시 항상 정렬 상태를 유지한다.</li>
+            </ul>
+        </li>
+        <li>
+            논 클러스터 인덱스(Non Clustered Index)
+            <ul class="list">
+                <li>테이블당 여러 개 생성이 가능하다.</li>
+                <li>레코드의 원본은 정렬되지 않고, 인덱스 페이지만 정렬된다.</li>
+                <li>인덱스 페이지는 로그파일에 저장된다.</li>
+                <li>인덱스 자체의 리프 페이지는 데이터가 아니라 데이터가 위치한 주소의 고유값이다.</li>
+                <li>클러스터형보다 검색 속도는 느리지만 데이터의 입력, 수정, 삭제는 더 빠르다.</li>
+                <li>인덱스를 생성할 때 데이터 페이지는 그냥 둔 상태에서 별도의 인덱스 페이지를 따로 만들기 때문에 용량을 더 차지한다.</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="article">
+    <h4 class="sub-title">인덱스의 장점</h4>
+    <ol class="list">
+        <li>검색 속도를 높여준다</li>
+        <li>전반적인 시스템의 부하를 줄일 수 있다.</li>
+    </ol>
+</div>
+
+<div class="article">
+    <h4 class="sub-title">인덱스의 단점</h4>
+    <ul class="list">
+        <li>인덱스를 관리하기 위해 DB의 약 10%의 저장 공간이 필요하다.</li>
+        <li>인덱스를 관리하기 위해서는 추가 작업이 필요하다.</li>
+        <li>데이터 변경 작업이 자주 일어날 때 인덱스를 재작성해야 할 필요가 있어 성능에 영향을 끼칠 수 있다.</li>
+        <li>인덱스를 잘못 사용할 경우 오히려 성능이 저하되는 역효과가 발생할 수 있다.</li>
+    </ul>
+</div>
+
+<div class="article">
+    <h4 class="sub-title">인덱스를 설정하기 좋은 컬럼</h4>
+    <ul class="list">
+        <li>
+            카디널리티(Cardinality)가 높은 컬럼<br>
+            카디널리티가 높다는 것은 중복도가 낮다는 의미이다.(= 대부분 다른 값들을 갖고 있다.)
+        </li>
+        <li>
+            선택도(Selectivity)가 낮은 컬럼<br>
+            선택도가 낮다는 것은 한 컬럼이 갖고 있는 값 하나로 적은 row가 검색된다는 의미이다.
+        </li>
+        <li>
+            WHERE, JOIN, ORDER BY 절에 많이 활용되는 컬럼
+        </li>
+        <li>
+            추가, 수정, 삭제 빈도가 낮은 컬럼
+        </li>
+    </ul>
+</div>
+
+<div class="article">
+    <h4 class="sub-title">인덱스 사용시 주의사항</h4>
+    <ul class="list">
+        <li>
+            검색할 데이터가 전체 데이터의 15~20% 이상이라면, MySQL에서 인덱스를 사용하지 않는다.<br>
+            전체 데이터의 10~15% 이내의 데이터가 출력될 때 효율적이고, 그 이상이 될 때는 오히려 풀스캔이 더 빠르다.
+        </li>
+        <li>사용하지 않는 인덱스는 제거하는 것이 좋다.</li>
+    </ul>
+</div>
+
+<div class="article">
+    <h4 class="sub-title">인덱스가 되지 않는 경우</h4>
+    <ul class="list">
+        <li>
+            인덱스 컬럼을 부정형 비교할 때<br>
+            <span class="bl m-t-1">WHERE 컬럼 <> '0'</span>
+        </li>
+        <li>
+            LIKE 검색시 %가 인덱스 컬럼의 앞에 위치할 때<br>
+            <span class="bl m-t-1">WHERE 컬럼 LIKE '%민수'</span>
+        </li>
+        <li>
+            인덱스 컬럼을 가공할 때<br>
+            <span class="bl m-t-1">WHERE REPLACE(컬럼, 'A', 'B') = 'BB'</span>
+        </li>
+        <li>
+            인덱스 컬럼에 형변환을 할 때<br>
+            <span class="bl m-t-1">WHERE 컬럼(ex. 문자열 타입) = 123</span>
+        </li>
+    </ul>
+</div>
+
+<div class="article">
+    <h4 class="sub-title">GROUP BY 절의 인덱스 유의사항</h4>
+    <ul class="list">
+        <li>GROUP BY 절에 명시된 컬럼이 인덱스 컬럼의 순서와 위치가 같아야 한다.</li>
+        <li>WHERE 절과는 다르게 GROUP BY 절에 명시된 컬럼이 하나라도 인덱스에 없으면 GROUP BY 절은 인덱스를 사용하지 못한다.</li>
+        <li>인덱스를 구성하는 컬럼 중에 뒤쪽에 있는 컬럼은 GROUP BY 절에 명시되지 않아도 인덱스를 사용할 수 있지만 인덱스의 앞쪽에 있는 컬럼이 GROUP BY 절에 명시되지 않으면 인덱스를 사용할 수 없다.</li>
+    </ul>
+</div>
+
+<div class="article">
+    <h4 class="sub-title">ORDER BY 절의 인덱스 유의사항</h4>
+    <ul class="list">
+        <li>정렬되는 각 컬럼의 오름차순 및 내림차순이 인덱스와 같거나 또는 정반대의 경우에만 사용할 수 있다.</li>
+        <li>ORDER BY 절의 모든 컬럼이 오름차순이거나 내림차순일 때만 인덱스를 사용할 수 있다.</li>
+    </ul>
+</div>
+
+<div class="article">
+    <h5 class="point-title">ORDER BY DESC 인덱스가 적용되지 않는다.(MySQL 8.0 이전까지)</h5>
+</div>
+
+<div class="article">
+    <h4 class="sub-title">GROUP BY + ORDER BY 절의 인덱스 유의사항</h4>
+    <ul class="list">
+        <li>GROUP BY 절에 명시된 컬럼과 ORDER BY에 명시된 컬럼이 순서와 내용이 모두 같아야 한다.</li>
+    </ul>
+</div>
