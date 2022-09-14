@@ -161,11 +161,14 @@ body.popup #popup {
 }
 
 .bl {
+    width: 100%;
+    box-sizing: border-box;
     padding: 0 1.6%;
     background-color: #404040;
     color: #fff;
     border-radius: 3px;
     display: inline-block;
+    word-break: break-word;
 }
 
 .text-center {
