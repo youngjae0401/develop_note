@@ -1,0 +1,107 @@
+---
+layout: post
+title: "쿠키, 세션이란?"
+subtitle: ""
+date: 2022-10-05 21:43:00 +0900
+background: '/img/posts/06.jpg'
+---
+
+<div class="article">
+    <h4 class="sub-title">쿠키(Cookie)</h4>
+    <div class="content">
+        <ul class="list">
+            <li>
+                <h5>개념</h5>
+                클라이언트 PC에 Key-Value 형태로 사용자에 대한 정보가 저장되는 작은 데이터 파일이다.
+            </li>
+            <li>
+                <h5>구성 요소</h5>
+                <ul class="list">
+                    <li>이름: 각각의 쿠키를 구별하는 데 사용되는 이름</li>
+                    <li>값: 쿠키의 이름과 관련된 값</li>
+                    <li>유효시간: 쿠키의 유지되는 시간</li>
+                    <li>도메인: 쿠키를 전송할 도메인</li>
+                    <li>경로: 쿠키를 전송할 요청 경로</li>
+                </ul>
+            </li>
+            <li>
+                <h5>특징</h5>
+                <ul class="list">
+                    <li>클라이언트에 총 300개의 쿠키를 저장할 수 있다.</li>
+                    <li>하나의 도메인 당 20개 쿠키를 가질 수 있다.</li>
+                    <li>하나의 쿠키는 4KB(=4096byte)까지 저장이 가능하다.</li>
+                </ul>
+            </li>
+            <li>
+                <h5>동작 순서</h5>
+                <ol class="list">
+                    <li>클라이언트가 페이지를 요청한다.</li>
+                    <li>서버에서 쿠키를 생성한다.</li>
+                    <li>생성한 쿠키에 정보를 담아 클라이언트에게 전달한다(Response Header에 Set-Cookie)</li>
+                    <li>전달받은 쿠키는 클라이언트 PC에 저장된다.</li>
+                    <li>만들어진 쿠키는 클라이언트가 요청하지 않아도 Request Header에 넣어서 서버에 전송한다.</li>
+                </ol>
+            </li>
+            <li>
+                <h5>사용 예시</h5>
+                <ul class="list">
+                    <li>아이디 저장</li>
+                    <li>로그인 상태 유지</li>
+                    <li>쇼핑몰의 장바구니 기능</li>
+                    <li>오늘 하루 보지 않기</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="article">
+    <h4 class="sub-title">세션(Session)</h4>
+    <div class="content">
+        <ul class="list">
+            <li>
+                <h5>개념</h5>
+                세션은 쿠키를 기반하고 있지만, 클라이언트 정보를 브라우저에 저장하는 쿠키와 다르게 서버 메모리에 저장된다.<br>
+                클라이언트의 정보를 서버에 저장하기 때문에 쿠키보다는 보안에 좋지만, 클라이언트가 많아질수록 서버 메모리를 많이 차지하게 된다.<br>
+                동시 접속하는 유저가 많아지면 서버에 부하를 주게 되기 때문에 성능 저하의 요인이 될 수 있다.<br>
+            </li>
+            <li>
+                <h5>특징</h5>
+                <ul class="list">
+                    <li>각 클라이언트에 고유 Session ID를 부여한다.</li>
+                    <li>서버는 Session ID로 클라이언트를 구분하고 클라이언트의 요구에 맞는 서비스를 제공할 수 있다.</li>
+                    <li>서버에서 관리하기 때문에 비교적 보안이 좋다.</li>
+                    <li>접속 시간에 제한을 두어 일정 시간동안 응답이 없으면 정보가 유지되지 않도록 설정할 수 있다.</li>
+                </ul>
+            </li>
+            <li>
+                <h5>동작 순서</h5>
+                <ol class="list">
+                    <li>클라이언트가 페이지를 요청한다.</li>
+                    <li>서버에서 세션 ID를 만들고 사용자 정보를 세션 ID와 함께 저장한다.</li>
+                    <li>생성한 세션 ID를 쿠키에 담아 클라이언트에게 전달한다(Response Header에 Set-Cookie)</li>
+                    <li>전달받은 쿠키는 클라이언트 PC에 저장된다.</li>
+                    <li>만들어진 쿠키는 클라이언트가 요청하지 않아도 Request Header에 넣어서 서버에 전송한다.</li>
+                </ol>
+            </li>
+            <li>
+                <h5>사용 예시</h5>
+                <ul class="list">
+                    <li>로그인 같은 보안상 중요한 기능</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="article">
+    <h4 class="sub-title">세션과 쿠키의 차이점</h4>
+    <div class="content">
+        <ul class="list">
+            <li>저장 위치: 세션은 서버의 자원을 사용하고 쿠키는 사용하지 않는다.</li>
+            <li>보안: 세션은 서버에 저장되기 때문에 쿠키보다 보안이 좋다.</li>
+            <li>요청속도: 세션은 서버의 처리가 필요하기 때문에 쿠키가 세션보다 더 빠르다.</li>
+        </ul>
+    </div>
+</div>
