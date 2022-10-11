@@ -1,0 +1,104 @@
+---
+layout: post
+title: "Xdebug 설정"
+subtitle: ""
+date: 2022-10-08 18:28:00 +0900
+background: '/img/posts/06.jpg'
+---
+
+<div class="article">
+    <h4 class="sub-title">Xdebug란?</h4>
+    <div class="content">
+        PHP extension이며 디버깅, 프로파일링, 추적 등 다양한 기능을 제공한다.<br>
+        PHP 8 버전 이상 사용할 경우 Xdebug는 3 버전 이상 사용해야 한다.<br>
+        VSCode ide를 사용하고 Docker Composer를 적용하여 간단하게 Xdebug를 설정해본다.
+    </div>
+</div>
+
+<div class="article">
+    <h4>시작 전 디렉토리 구조</h4>
+    <div><img src="{{"/img/posts/20221011/directory.png" | relative_url }}" alt="디렉토리 구조" class="image"></div>
+</div>
+
+<div class="article">
+    <h4>1. docker-compose.yml 작성하기</h4>
+    <div>
+{% highlight YAML %}
+version: '3.8'
+
+services:
+    app:
+    build: ./docker/app
+    ports:
+        - '8080:80'
+    volumes:
+        - ./src:/var/www/html
+        - ./docker/app/php.ini:/usr/local/etc/php/php.ini
+{% endhighlight %}
+    </div>
+</div>
+
+<div class="article">
+    <h4>2. docker/app/Dockerfile 작성하기</h4>
+    <div>
+{% highlight YAML %}
+FROM php:8.1-apache
+
+RUN pecl install xdebug \
+    && docker-php-ext-enable xdebug
+{% endhighlight %}
+    </div>
+</div>
+
+<div class="article">
+    <h4>3. docker/app/php.ini 작성하기</h4>
+    <div>
+{% highlight YAML %}
+[xdebug]
+xdebug.mode=debug
+xdebug.start_with_request=yes
+xdebug.client_host=host.docker.internal
+xdebug.client_port=9003
+{% endhighlight %}
+    </div>
+</div>
+
+<div class="article">
+    <h4>4. extension install</h4>
+    <div><img src="{{"/img/posts/20221011/extension.png" | relative_url }}" alt="extension install" class="image"></div>
+</div>
+
+<div class="article">
+    <h4>5. launch.json 생성</h4>
+    <div><img src="{{"/img/posts/20221011/launch.png" | relative_url }}" alt="create launch.json" class="image"></div>
+</div>
+
+<div class="article">
+    <h4>6. launch.json에 xdebug 설정</h4>
+    <div>
+{% highlight JSON %}
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Listen for XDebug",
+            "type": "php",
+            "request": "launch",
+            "port": 9003,
+            "pathMappings": {
+                "/var/www/html/": "${workspaceRoot}/src"
+            }
+        }
+        ...
+    ]
+}
+{% endhighlight %}
+    </div>
+</div>
+
+<div class="article">
+    <h4>
+        7. src/index.php 파일 생성 후 임의의 코드를 작성하고 F5키를 누르면 디버깅모드가 실행되는 것을 확인할 수 있다.(※ 코드 줄번호 표시 좌측에 클릭을 하여 break point를 지정한다.)
+    </h4>
+    <div><img src="{{"/img/posts/20221011/debug.png" | relative_url }}" alt="debug" class="image"></div>
+</div>
