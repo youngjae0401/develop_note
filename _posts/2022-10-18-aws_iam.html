@@ -1,0 +1,100 @@
+---
+layout: post
+title: "[AWS] IAM 추가"
+subtitle: ""
+date: 2022-10-18 19:52:00 +0900
+background: '/img/posts/06.jpg'
+---
+
+<div class="article">
+    <h4 class="sub-title">AWS IAM이란?</h4>
+    <div class="content">
+        AWS IAM(Identity and Access Management)은 AWS 리소스에 대한 액세스를 안전하게 제어하는 서비스이다.<br>
+        IAM을 사용하여 리소스를 사용하도록 인증 및 권한이 부여된 대상을 제어한다. (사용자 또는 그룹으로 관리할 수 있다.)<br>
+        AWS 계정을 생성하면 ROOT 계정이 생성되는데 ROOT 계정은 AWS의 모든 리소스에 대한 접근 권한을 갖고 있기 때문에 ROOT 계정은 사용하지 않는 것을 권장한다.<br>
+        그래서 IAM 사용자를 추가해보고 IAM 사용자에 대한 MFA도 설정해본다.
+    </div>
+</div>
+
+<div class="article">
+    <h4 class="point-title">해당 포스팅은 AWS ROOT 계정 로그인이 된 상태에서 진행하며 그룹이 아닌 사용자에 대해 설정하는 내용이다.</h4>
+</div>
+
+<div class="article">
+    <h4>1. AWS에서 IAM 검색 후 대시보드 진입</h4>
+</div>
+
+<div class="article">
+    <h4>2. 좌측 사용자 클릭</h4>
+    <div><img src="{{"/img/posts/20221018/IAM_1.png" | relative_url }}" alt="과정1" class="image"></div>
+</div>
+
+<div class="article">
+    <h4>3. 우측 사용자 추가 클릭</h4>
+    <div><img src="{{"/img/posts/20221018/IAM_2.png" | relative_url }}" alt="과정2" class="image"></div>
+</div>
+
+<div class="article">
+    <h4>4. 아래 이미지와 같이 입력</h4>
+    <div><img src="{{"/img/posts/20221018/IAM_3.png" | relative_url }}" alt="과정3" class="image"></div>
+</div>
+
+<div class="article">
+    <h4>5. 기존 정책 직접 연결 선택, 제일 상단 AdministratorAccess(모든 권한) 선택</h4>
+    <div><img src="{{"/img/posts/20221018/IAM_4.png" | relative_url }}" alt="과정4" class="image"></div>
+</div>
+
+<div class="article">
+    <h4>6. 패스</h4>
+    <div><img src="{{"/img/posts/20221018/IAM_5.png" | relative_url }}" alt="과정5" class="image"></div>
+</div>
+
+<div class="article">
+    <h4>7. 사용자 만들기 클릭</h4>
+    <div><img src="{{"/img/posts/20221018/IAM_6.png" | relative_url }}" alt="과정6" class="image"></div>
+</div>
+
+<div class="article">
+    <h4>8. csv 파일 다운로드(비밀 액세스 키는 노출되어서는 안된다.)</h4>
+    <div><img src="{{"/img/posts/20221018/IAM_7.png" | relative_url }}" alt="과정7" class="image"></div>
+</div>
+
+<div class="article">
+    <h4>9. 사용자 클릭</h4>
+    <div><img src="{{"/img/posts/20221018/IAM_8.png" | relative_url }}" alt="과정8" class="image"></div>
+</div>
+
+<div class="article">
+    <h4>10. 보안 자격 증명 클릭 > 할당된 MFA 디바이스 관리 클릭 > 가상 MFA 디바이스 선택</h4>
+    <div><img src="{{"/img/posts/20221018/IAM_9.png" | relative_url }}" alt="과정9" class="image"></div>
+</div>
+
+<div class="article">
+    <h4>11. QR 코드 표시 클릭</h4>
+    <div><img src="{{"/img/posts/20221018/IAM_10.png" | relative_url }}" alt="과정10" class="image"></div>
+</div>
+
+<div class="article">
+    <h4>12. google authenticator에 QA 코드 인식 후 생성된 인증코드 입력</h4>
+    <div><img src="{{"/img/posts/20221018/IAM_11.png" | relative_url }}" alt="과정11" class="image"></div>
+</div>
+
+<div class="article">
+    <h4>13. AWS 계정 ID 또는 계정 별칭을 복사</h4>
+    <div><img src="{{"/img/posts/20221018/IAM_12.png" | relative_url }}" alt="과정12" class="image"></div>
+</div>
+
+<div class="article">
+    <h4>14. IAM 사용자 선택 > 복사해두었던 계정 ID 또는 계정 별칭 입력 후 로그인</h4>
+    <div><img src="{{"/img/posts/20221018/IAM_13.png" | relative_url }}" alt="과정13" class="image"></div>
+</div>
+
+<div class="article">
+    <h4>15. 설정했던 사용자 이름 및 비밀번호 입력 후 로그인</h4>
+    <div><img src="{{"/img/posts/20221018/IAM_14.png" | relative_url }}" alt="과정14" class="image"></div>
+</div>
+
+<div class="article">
+    <h4>16. MFA 인증코드 입력</h4>
+    <div><img src="{{"/img/posts/20221018/IAM_15.png" | relative_url }}" alt="과정15" class="image"></div>
+</div>
