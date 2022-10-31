@@ -1,0 +1,115 @@
+---
+layout: post
+title: "[PHP] 접근제어자"
+subtitle: ""
+date: 2022-10-31 16:53:00 +0900
+background: '/img/posts/06.jpg'
+---
+
+<div class="article">
+    <h4 class="sub-title">접근제어자(Access Modifier)</h4>
+    <div class="content">
+        접근제어자는 변수, 메서드에 권한을 부여하여 접근을 제어하는 역할을 한다.
+    </div>
+</div>
+
+<div class="article">
+    <h4 class="sub-title">자기 자신 클래스인 경우</h4>
+    <div class="content">
+{% highlight PHP %}
+<?php
+Class ParentClass {
+    public $_public = "public";
+    protected $_protected = "protected";
+    private $_private = "private";
+
+    function getPublic() {
+        return $this->_public;
+    }
+    
+    function getProtected() {
+        return $this->_protected;
+    }
+    
+    function getPrivate() {
+        return $this->_private;
+    }
+}
+
+$obj = new ParentClass();
+echo $obj->_public; // public
+echo $obj->_protected; // Cannot access protected property
+echo $obj->_private; // Cannot access private property
+echo $obj->getPublic(); // public
+echo $obj->getProtected(); // protected
+echo $obj->getPrivate(); // private
+?>
+{% endhighlight %}
+    </div>
+</div>
+
+<div class="article">
+    <h4 class="sub-title">자식 클래스에서 부모 클래스를 상속 받는 경우</h4>
+    <div class="content">
+{% highlight PHP %}
+<?php
+Class ParentClass {
+    public $_public = "public";
+    protected $_protected = "protected";
+    private $_private = "private";
+
+    function getPublic() {
+        return $this->_public;
+    }
+    
+    function getProtected() {
+        return $this->_protected;
+    }
+    
+    function getPrivate() {
+        return $this->_private;
+    }
+}
+
+Class ChildClass extends ParentClass {
+    function getPublic() {
+        return $this->_public;
+    }
+    
+    function getProtected() {
+        return $this->_protected;
+    }
+    
+    function getPrivate() {
+        return $this->_private;
+    }
+}
+
+$obj = new ChildClass();
+echo $obj->_public; // public
+echo $obj->_protected; // Cannot access protected property
+echo $obj->_private; // Undefined property
+echo $obj->getPublic(); // public
+echo $obj->getProtected(); // protected
+echo $obj->getPrivate(); // Undefined property
+?>
+{% endhighlight %}
+    </div>
+</div>
+
+<div class="article">
+    <h4 class="sub-title">정리</h4>
+    <div class="content">
+        <ul class="list">
+            <li>
+                public: 내/외부, 어디서든 Access 가능
+            </li>
+            <li>
+                protected: 같은 클래스 및 자식 클래스에서만 Access 가능 (인스턴스에는 접근 불가)
+            </li>
+            <li>
+                private: 같은 클래스에서만 Access 가능 (인스턴스에는 접근 불가)
+            </li>
+        </ul>
+    </div>
+</div>
