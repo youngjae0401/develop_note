@@ -1,0 +1,98 @@
+---
+layout: post
+title: "ORM이란?"
+subtitle: ""
+date: 2022-10-31 22:12:00 +0900
+background: '/img/posts/06.jpg'
+---
+
+<div class="article">
+    <h4 class="sub-title">ORM(Object-Relational Mapping)</h4>
+    <div class="content">
+        객체 지향 프로그래밍에서의 객체(Object)와 관계형 데이터베이스(Relational Database, RDB)에 있는 데이터를 자동으로 매핑해주는 기술이다.<br>
+        객체 지향 프로그래밍은 클래스를 사용하고, 관계형 데이터베이스는 테이블을 사용한다.<br>
+        객체 모델과 관계형 모델 간에 불일치가 존재한다.<br>
+        ORM은 객체 간의 관계를 바탕으로 SQL을 자동으로 생성하여 불일치를 해결한다.
+    </div>
+</div>
+
+<div class="article">
+    <h4 class="sub-title">ORM 장점</h4>
+    <div class="content">
+        <ul class="list">
+            <li>
+                객체 지향적인 코드로 인해 더 직관적이고 비즈니스 로직에 더 집중할 수 있다.
+                <ul class="list">
+                    <li>
+                        SQL의 절차적/순차적 접근이 아닌 오직 객체지향적 접근으로 인해 생산성이 증가한다.
+                    </li>
+                    <li>
+                        각 객체별로 코드를 작성하므로 가독성을 올려준다.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                재사용 및 유지보수의 편리성이 증가한다.
+                <ul class="list">
+                    <li>
+                        ORM은 독립적으로 작성되어있고 해당 객체들은 재사용이 가능하다.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                DBMS에 대한 종속성이 줄어든다.
+                <ul class="list">
+                    <li>
+                        대부분의 ORM은 데이터베이스에 비종속적이다.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="article">
+    <h4 class="sub-title">ORM 단점</h4>
+    <div class="content">
+        <ul class="list">
+            <li>
+                ORM으로만 서비스를 구현하기가 어렵다.
+                <ul class="list">
+                    <li>
+                        복잡성이 커질수록 난이도가 증가하고 부족한 설계로 잘못 구현된 경우 속도 저하 및 일관성이 무너지는 문제점이 생길 수 있다.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                프로시저가 많은 시스템에서는 ORM의 객체 지향적인 장점을 활용하기가 어렵다.
+                <ul class="list">
+                    <li>
+                        프로시저를 다시 객체로 바꿔야하며, 그 과정에서 생산성 저하나 리스크가 많이 발생할 수 있다.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="article">
+    <h4 class="sub-title">ORM 종류</h4>
+    <div class="content">
+        <ul class="list">
+            <li>
+                Python(Django): 내장 ORM
+            </li>
+            <li>
+                PHP(Laravel): Eloquent ORM
+            </li>
+            <li>
+                JAVA: Hybernate, JPA
+            </li>
+            <li>
+                Node.js: Sequalize
+            </li>
+        </ul>
+
+        이 외에도 다양한 ORM이 존재한다.
+    </div>
+</div>
