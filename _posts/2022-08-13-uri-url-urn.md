@@ -31,7 +31,7 @@ last_modified_at: 2022-08-13
 * URL의 식별자는 많은 요소로 구분되지만, 일반적으로 프로토콜, 도메인, 경로, 매개변수로 구분된다.
 
 > **URL 구조**
-> ![URL 구조]({{ site.url }}{{ site.baseurl }}/assets/images/posts/uri-url-urn/url.png "URL 구조")
+> ![URL 구조](({{ site.url }}/assets/images/posts/uri-url-urn/url.png "URL 구조")
 > * 프로토콜(Protocol): 네트워크 통신을 위한 통신규칙을 의미한다.
 > * 도메인(domain): 네트워크에 부여되는 고유한 이름이다.
 > * 경로(directory & file): 해당 파일(또는 자원)이 서버의 어디에 있는지를 나타내는 경로이다.
@@ -47,6 +47,6 @@ last_modified_at: 2022-08-13
 * 실제 자원을 찾기 위해서는 URN을 URL로 변환하여 이용한다.
 
 > **URN 구조**
-> ![URN 구조]({{ site.url }}{{ site.baseurl }}/assets/images/posts/uri-url-urn/urn.png "URN 구조")
+> ![URN 구조](({{ site.url }}/assets/images/posts/uri-url-urn/urn.png "URN 구조")
 > * 네임스페이스 지시자(NID, Namespace Identifier): 자원이 저장된 저장소를 표시한다. (* isbn: 각 출판사가 출판한 각각의 도서에 국제적으로 표준화하여 붙이는 그 고유의 도서번호이다. 즉, 도서 일련번호에 대한 정보를 저장하는 저장소이다.)
 > * 네임스페이스 특정문자(NSS, Namespace Specific String): 자원을 식별할 수 있는 고유값이다.

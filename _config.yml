@@ -21,7 +21,7 @@ title_separator: "&#124;"
 subtitle: # site tagline that appears below site title in masthead
 name: "Youngjae"
 description: "Youngjae Devnote"
-url: "https://youngjae0401.github.io/develop_note/"
+url: "https://youngjae0401.github.io/develop_note"
 baseurl: "/develop_note"
 repository: "youngjae0401/develop_note"
 teaser: #
