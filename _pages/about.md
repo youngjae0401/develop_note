@@ -1,12 +1,12 @@
 ---
-title: "안녕하세요. 조영재입니다.👋🏻"
+title: "Hi, I'm Youngjae 👋🏻"
 permalink: /about/
 layout: single
 comments: false
 ---
 
 <div>
-    <!-- <img src="/assets/images/avthm.jpg" alt="about_meee" width="70%" min-width="700px" itemprop="image"> -->
+    <img src="{{ site.baseurl }}/assets/images/youngjae.png" alt="about_meee" width="70%" min-width="700px" itemprop="image">
 </div>
 
 <div style="border-left: 2px solid rgba(199, 198, 198, 0.7); margin: 0.5em 0 0 0.5em; padding-left: 1.5em; font-weight: 500;">
@@ -26,6 +26,12 @@ comments: false
                 <meta itemprop="email" content="joyoungjae0401@gmail.com" />
                 <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i>
                 <span class="label">  joyoungjae0401@gmail.com</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.notion.so/Resume-051884ada2174d2e963364fa2108433b">
+                <i class="fas fa-user-circle" aria-hidden="true"></i>
+                <span class="label">  resume</span>
             </a>
         </li>
     </ul>
