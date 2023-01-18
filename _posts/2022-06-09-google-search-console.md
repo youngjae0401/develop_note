@@ -24,12 +24,12 @@ last_modified_at: 2022-06-09
 
 #### Step 1
 시작하기
-![과정1](({{ site.url }}/assets/images/posts/google-search-console/1.png "1")
+![과정1]({{ site.baseurl }}/assets/images/posts/google-search-console/1.png "1")
 * * *
 
 #### Step 2
 URL 접두어를 선택하였고, URL 입력 후 계속
-![과정2](({{ site.url }}/assets/images/posts/google-search-console/2.png "2")
+![과정2]({{ site.baseurl }}/assets/images/posts/google-search-console/2.png "2")
 
 |<center>도메인</center>|가능여부|
 |------|:-------:|
@@ -50,30 +50,30 @@ URL 접두어를 선택하였고, URL 입력 후 계속
 
 #### Step 3
 다운로드한 파일을 최상위 디렉토리에 올린 뒤에 확인
-![과정3](({{ site.url }}/assets/images/posts/google-search-console/3.png "3")
+![과정3]({{ site.baseurl }}/assets/images/posts/google-search-console/3.png "3")
 * * *
 
 #### Step 4
 속성으로 이동
-![과정4](({{ site.url }}/assets/images/posts/google-search-console/4.png "4")
+![과정4]({{ site.baseurl }}/assets/images/posts/google-search-console/4.png "4")
 * * *
 
 #### Step 5
 Sitemaps
-![과정5](({{ site.url }}/assets/images/posts/google-search-console/5.png "5")
+![과정5]({{ site.baseurl }}/assets/images/posts/google-search-console/5.png "5")
 * * *
 
 #### Step 6
 Sitemap 입력 후 제출
-![과정6](({{ site.url }}/assets/images/posts/google-search-console/6.png "6")
+![과정6]({{ site.baseurl }}/assets/images/posts/google-search-console/6.png "6")
 * * *
 
 #### Step 7
 Sitemap이 추가된 것을 확인
-![과정7](({{ site.url }}/assets/images/posts/google-search-console/7.png "7")
+![과정7]({{ site.baseurl }}/assets/images/posts/google-search-console/7.png "7")
 * * *
 
 #### Step 8
 실적 페이지를 확인하시면 위와 같이 적용되는데 시간이 소요된다.
-![과정8](({{ site.url }}/assets/images/posts/google-search-console/8.png "8")
+![과정8]({{ site.baseurl }}/assets/images/posts/google-search-console/8.png "8")
 * * *

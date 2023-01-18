@@ -23,50 +23,50 @@ last_modified_at: 2022-06-07
 * * *
 
 #### Step 1
-![과정1](({{ site.url }}/assets/images/posts/google-analytics/1.png "1")
+![과정1]({{ site.baseurl }}/assets/images/posts/google-analytics/1.png "1")
 * * *
 
 #### Step 2
 계정 이름 입력 후 다음
-![과정2](({{ site.url }}/assets/images/posts/google-analytics/2.png "2")
+![과정2]({{ site.baseurl }}/assets/images/posts/google-analytics/2.png "2")
 * * *
 
 #### Step 3
 속성이름 입력 > 시간대 선택 > 통화 선택 후 다음
-![과정3](({{ site.url }}/assets/images/posts/google-analytics/3.png "3")
+![과정3]({{ site.baseurl }}/assets/images/posts/google-analytics/3.png "3")
 * * *
 
 #### Step 4
 업종 카테고리 선택 > 비즈니스 규모 선택 > 사용할 계획 선택 후 만들기
-![과정4](({{ site.url }}/assets/images/posts/google-analytics/4.png "4")
+![과정4]({{ site.baseurl }}/assets/images/posts/google-analytics/4.png "4")
 * * *
 
 #### Step 5
 약관 체크 후 동의함
-![과정5](({{ site.url }}/assets/images/posts/google-analytics/5.png "5")
+![과정5]({{ site.baseurl }}/assets/images/posts/google-analytics/5.png "5")
 * * *
 
 #### Step 6
 웹 선택
-![과정6](({{ site.url }}/assets/images/posts/google-analytics/6.png "6")
+![과정6]({{ site.baseurl }}/assets/images/posts/google-analytics/6.png "6")
 * * *
 
 #### Step 7
 웹 사이트 URL 입력 > 스트림 이름 입력 후 스트림 만들기
-![과정7](({{ site.url }}/assets/images/posts/google-analytics/7.png "7")
+![과정7]({{ site.baseurl }}/assets/images/posts/google-analytics/7.png "7")
 * * *
 
 #### Step 8
 측정ID Copy
-![과정8](({{ site.url }}/assets/images/posts/google-analytics/8.png "8")
+![과정8]({{ site.baseurl }}/assets/images/posts/google-analytics/8.png "8")
 * * *
 
 #### Step 9
 _config.yml 파일에 google_analytics를 복사한 측정ID 입력
-![과정9](({{ site.url }}/assets/images/posts/google-analytics/9.png "9")
+![과정9]({{ site.baseurl }}/assets/images/posts/google-analytics/9.png "9")
 * * *
 
 #### Step 10
 통계 확인
-![과정10](({{ site.url }}/assets/images/posts/google-analytics/10.png "10")
+![과정10]({{ site.baseurl }}/assets/images/posts/google-analytics/10.png "10")
 * * *
