@@ -1,0 +1,37 @@
+# main links
+main:
+  - title: "Home"
+    url: https://youngjae0401.github.io/develop_note
+
+  - title: "About"
+    url: /about/
+
+  - title: "GitHub"
+    url: https://github.com/youngjae0401
+
+  # - title: "Projects"
+  #   url: /projects/
+
+  # - title: "Categories"
+  #   url: /categories/
+
+# sidebar navigation (categories)
+# 2022.02.15 sidebar update : simple ver.
+categories:
+  - title: "GitHub Blog"
+    url: /categories/github-blog/
+    
+  - title: "Web"
+    url: /categories/web/
+    
+  - title: "JavaScript"
+    url: /categories/js/
+    
+  - title: "DataBase"
+    url: /categories/db/
+
+  - title: "Infra"
+    url: /categories/infra/
+    
+  - title: "PHP"
+    url: /categories/php/
