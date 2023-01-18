@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://youngjae0401.github.io/develop_note/sitemap.xml
