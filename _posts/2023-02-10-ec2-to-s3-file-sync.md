@@ -126,7 +126,7 @@ aws sync {PATH} s3://{BUCKET NAME} --dryrun
 
 ### ✅ JPG/PNG.. ➡️ WEBP 확장자 컨버팅 방법
 
-> `WEBP`는 2010년 Web을 위해서 구글에서 만든 효율적인 이미지 포맷이다.
+> `WEBP`는 2010년 Web을 위해 구글에서 만든 효율적인 이미지 포맷이다.
 
 #### Step 1
 ##### `imagemagick` 라이브러리에 필요한 모듈 설치
