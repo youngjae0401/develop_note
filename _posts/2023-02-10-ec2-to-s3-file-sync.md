@@ -120,7 +120,7 @@ aws sync {PATH} s3://{BUCKET NAME}
 ```bash
 aws sync {PATH} s3://{BUCKET NAME} --dryrun
 ```
-`--dryrun`을 사용하면 테스트로 커맨드를 실행이 된다.👍
+`--dryrun`을 사용하면 테스트로 커맨드가 실행이 된다.👍
 
 * * *
 
@@ -144,11 +144,31 @@ sudo yum -y install libwebp libwebp-tools
 
 #### Step2
 ##### 모든 파일을 한 번에 컨버팅 시작
-이미지의 퀄리티는 80%로 적용했다. <br>
-여러 시도 끝에 80%가 가장 적절해보였다.
+여러 시도 끝에 퀄리티는 80%가 가장 적절해보였기 때문에 80%로 적용했고 <br>
+혹시 컨버팅 중에 에러가 발생하여 끊기면 끊긴 파일만 다시 컨버팅을 하려고 컨버팅에 성공한 파일과 실패한 파일을 텍스트 파일로 남겨두었다.
+쉘 스크립트는 `ChatGPT`에게 도움을 받고 적절하게 섞어서 적용했다.👍<br>
+**대략 23G 용량의 이미지들을 컨버팅을 하는데 9시간 40분정도 소요됐고 용량은 3G로 줄었다.**
 ```bash
-sudo find {path} -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" \) -exec bash -c 'convert -quality 80% "$1" "${1%.*}.webp" ' bash {} \;
+#!/bin/bash
+
+IMAGES_DIR="{PATH}"
+
+sudo find "$IMAGES_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" \) -print0 | while read -d $'\0' file
+do
+    outfile="${file%.*}.webp"
+
+    sudo convert "$file" -quality 80 "$outfile" &> /dev/null
+
+    echo "$outfile" >> success_converted.txt
+
+    if [ $? -ne 0 ]; then
+        echo "$file" >> error_converted.txt
+    fi
+done
 ```
+
+> jpg, jpeg, png, gif로 작성을 했지만 JPG, JPEG, PNG, GIF 형식도 모두 컨버팅 된다.
+
 위와 같이 명령어를 실행하면 같은 폴더 내에 같은 파일명으로 확장자만 다르게 컨버팅이 된다. <br>
 webp로 컨버팅 시에 이미지 용량은 **작게는 1/2로, 많게는 1/10**로 줄어든다.
 
