@@ -113,12 +113,12 @@ aws s3 cp {PATH} s3://{BUCKET NAME} --recursive
 
 하지만, `cp & --recursive` 보다 더 괜찮은 명령어가 있다. 바로 `sync` 이다.
 ```bash
-aws sync {PATH} s3://{BUCKET NAME}
+aws s3 sync {PATH} s3://{BUCKET NAME}
 ```
 위와 같이 명령어를 실행하면 통째로 동기화가 된다.👍 <br><br>
 이외에도 작업하면서 실용적인 명령어도 있었다.
 ```bash
-aws sync {PATH} s3://{BUCKET NAME} --dryrun
+aws s3 sync {PATH} s3://{BUCKET NAME} --dryrun
 ```
 `--dryrun`을 사용하면 테스트로 커맨드가 실행이 된다.👍
 
