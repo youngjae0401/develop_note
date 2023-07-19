@@ -1,5 +1,5 @@
 ---
-title: "[AWS] S3 Pre-signed URL 사용하기 (with. Laravel)"
+title: "[AWS] Laravel9에서 S3 Pre-signed URL 적용"
 excerpt: "Laravel에서 AWS S3 Pre-signed URL을 적용해보자"
 
 categories:
@@ -26,13 +26,15 @@ last_modified_at: 2023-07-18
 
 #### Pre-signed URL이란?
 AWS 공식 문서에 따르면 미리 서명된 URL의 생성자가 해당 객체에 대한 액세스 권한을 보유할 경우, 미리 서명된 URL은 URL에서 식별된 객체에 대한 액세스를 부여합니다.<br><br>
-쉽게 말해, **사용자에게 일정 기간동안 접근 권한을 갖는 URL**을 제공해준다.
+쉽게 말해, **사용자에게 일정 기간동안 접근 권한을 갖는 URL**을 제공해준다.<br><br>
+그리고 `Pre-signed URL`을 사용하면 S3의 설정된 정책은 무시되며, 직접 폐기하는 방법은 없다.<br><br>
+만료 시간 이후에 자동으로 폐기가 된다.
 
 * * *
 
 #### AWS CLI에서 생성하는 방법
 ```bash
-> aws s3 presign s3://{BUCKET NAME}/{PATH} --expries-in 3600
+> aws s3 presign s3://{BUCKET NAME}/{PATH} --expires-in 3600
 ```
 만료 시간을 `3,600초`로 부여한 커맨드이고, 아래와 같은 형태의 반환 값을 제공해준다.
 ```bash
@@ -52,8 +54,8 @@ class FileHandler
 {
     private const FILE_DOWNLOAD_SIGNED_URL_EXPIRED_TIME = '3';
 
-    private S3Client $s3Client;
-    private string $bucketName;
+    private readonly S3Client $s3Client;
+    private readonly string $bucketName;
 
     public function __construct()
     {
@@ -74,7 +76,7 @@ class FileHandler
         }
     }
 
-    private function getFileHeadObject(string $file): array
+    public function getFileHeadObject(string $file): array
     {
         try {
             $result =  $this->s3Client->headObject([
@@ -89,10 +91,7 @@ class FileHandler
         }
     }
 
-    /**
-     * 파일 헤더 정보
-     */
-    private function getPreSignedUrl(string $file, string $expiredTime): string
+    public function getPreSignedUrl(string $file, string $expiredTime): string
     {
         try {
             $command = $this->s3Client->getCommand('GetObject', [
@@ -130,8 +129,10 @@ class FileHandler
 }
 ```
 
-파일에 대한 경로를 전달 받아서 `Pre-signed URL`을 반환 받고 파일을 다운로드 받는 예제 코드이다.<br><br>
+파일에 대한 경로를 전달 받아서 `Pre-signed URL`을 반환 받고 파일을 다운로드 받는 예제 코드이다.<br>
 
-민감 정보 파일을 다루는 부분은 파일 다운로드하는 부분만 있기 때문에 만료 시간을 `1초`로만 설정했어도 된다.<br><br>
+`public & private` 용도의 버킷을 따로 사용한다면 버킷에 대한 분기 처리를 하면 된다.<br>
+
+그리고 민감 정보 파일을 다루는 부분은 파일 다운로드하는 부분만 있기 때문에 만료 시간을 `1초`로만 설정했어도 된다.<br>
 
 다만, 네트워크 통신 시간을 감안하여 `3초`로 설정했다.
