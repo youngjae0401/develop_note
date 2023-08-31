@@ -8,7 +8,7 @@ categories:
 tags:
   - [SOLID]
 
-permalink: /java/solid-principle/
+permalink: /etc/solid-principle/
 
 toc: true
 toc_sticky: true
