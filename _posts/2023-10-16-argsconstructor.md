@@ -21,7 +21,7 @@ last_modified_at: 2023-10-16
 ---
 
 ### @AllArgsConstructor
-클래스 내에 존재하는 모든 필드를 매개변수로 하는 생성자를 만들어준다.
+클래스 내에 모든 필드를 매개변수로 하는 생성자를 만들어준다.
 
 ```java
 @AllArgsConstructor
