@@ -1,6 +1,6 @@
 ---
 title: "Google Analytics 적용"
-excerpt: "블로그에 Google Analytics를 적용하기"
+excerpt: ""
 
 categories:
   - GitHub Blog

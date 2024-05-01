@@ -1,6 +1,6 @@
 ---
 title: "[DB] MySQL에서 사용했던 유용한 함수"
-excerpt: "MySQL을 사용하면서 유용했던 함수를 정리해보자"
+excerpt: ""
 
 categories:
   - DataBase

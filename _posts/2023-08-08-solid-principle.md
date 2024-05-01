@@ -1,6 +1,6 @@
 ---
 title: "[ETC] SOLID 원칙"
-excerpt: "SOLID 원칙, 5가지에 대해서 알아보자"
+excerpt: ""
 
 categories:
   - ETC

@@ -1,6 +1,6 @@
 ---
 title: "Laravel9에서 AWS SES 451 Timeout 에러"
-excerpt: "Laravel9 버전 마이그레이션 이후에 AWS SES 451 Timeout 에러 발생"
+excerpt: ""
 
 categories:
     - PHP

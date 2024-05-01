@@ -1,6 +1,6 @@
 ---
 title: "[JAVA] @AllArgsConstructor, @NoArgsConstructor, @RequiredArgsConstructor 차이점"
-excerpt: "@AllArgsConstructor, @NoArgsConstructor, @RequiredArgsConstructor의 차이점을 알아보자"
+excerpt: ""
 
 categories:
   - JAVA

@@ -1,6 +1,6 @@
 ---
 title: "Docker Compose"
-excerpt: "Docker Compose에 대해서 알아보자"
+excerpt: ""
 
 categories:
   - Infra

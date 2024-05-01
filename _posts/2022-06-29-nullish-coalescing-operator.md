@@ -1,6 +1,6 @@
 ---
 title: "[JS] Nullish Coalescing Operator"
-excerpt: "[JS] Nullish Coalescing Operator에 대해서 알아보자"
+excerpt: ""
 
 categories:
   - JavaScript

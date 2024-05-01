@@ -1,6 +1,6 @@
 ---
 title: "[AWS] EC2에서 S3로 파일 업로드"
-excerpt: "EC2에 있는 이미지를 webp로 컨버팅 후에 S3로 옮겨보자"
+excerpt: ""
 
 categories:
     - Infra

@@ -1,6 +1,6 @@
 ---
 title: "URI, URL, URN"
-excerpt: "URI, URL, URN에 대해서 알아보자"
+excerpt: ""
 
 categories:
   - Web

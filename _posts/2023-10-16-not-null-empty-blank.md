@@ -1,6 +1,6 @@
 ---
 title: "[JAVA] @NotNull, @NotEmpty, @NotBlank 차이점"
-excerpt: "@NotNull, @NotEmpty, @NotBlank의 차이점을 알아보자"
+excerpt: ""
 
 categories:
   - JAVA

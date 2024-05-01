@@ -1,6 +1,6 @@
 ---
 title: "[JAVA] Gradle에서 npm install"
-excerpt: "Gradle에서 npm install을 해보자"
+excerpt: ""
 
 categories:
   - JAVA

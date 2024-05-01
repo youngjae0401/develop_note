@@ -1,6 +1,6 @@
 ---
 title: "Cookie & Session"
-excerpt: "쿠키와 세션에 대해서 알아보자"
+excerpt: ""
 
 categories:
   - Web

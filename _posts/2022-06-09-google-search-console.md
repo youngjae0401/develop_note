@@ -1,6 +1,6 @@
 ---
 title: "Google Search Console 적용"
-excerpt: "블로그에 Google Search Console을 적용하기"
+excerpt: ""
 
 categories:
   - GitHub Blog

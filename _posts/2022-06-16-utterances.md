@@ -1,6 +1,6 @@
 ---
 title: "Utterances 적용"
-excerpt: "블로그에 Utterances를 적용하기"
+excerpt: ""
 
 categories:
   - GitHub Blog
