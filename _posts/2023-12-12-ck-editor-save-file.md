@@ -61,6 +61,10 @@ last_modified_at: 2023-12-12
 
 * * *
 
+> **Gradle** <br>
+> implementation platform('software.amazon.awssdk:bom:2.21.1')
+> implementation 'software.amazon.awssdk:s3'
+
 ### JavaScript
 ```javascript
 class UploadAdapter {
