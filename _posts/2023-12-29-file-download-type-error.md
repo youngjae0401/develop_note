@@ -32,7 +32,7 @@ last_modified_at: 2023-12-29
 음.. 우선 파일 다운로드하는 코드를 보자.
 
 > **Gradle** <br>
-> implementation platform('software.amazon.awssdk:bom:2.21.1')
+> implementation platform('software.amazon.awssdk:bom:2.21.1') <br>
 > implementation 'software.amazon.awssdk:s3'
 
 ```java
