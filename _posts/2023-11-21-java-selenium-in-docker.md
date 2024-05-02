@@ -506,7 +506,7 @@ public class ElevenStreetScraperService extends ScraperService {
 
 여기에서 중요한 건 `Thread.sleep(100);` 이다. <br><br>
 클릭 이벤트가 있을 때 딜레이를 시켜야만 정상적으로 데이터를 가져올 수 있다. <br><br>
-그리고 각 데이터 별로 `try ~ catch` 구문을 감싸서 처리했는데, 중간에 요소가 없거나 오류가 발생할 경우 그 다음 데이터를 찾기 위해서였다. <br><br>
+그리고 각 데이터별로 `try ~ catch` 구문을 감싸서 처리했는데, 중간에 요소가 없거나 오류가 발생할 경우 그 다음 데이터를 찾기 위해서였다. <br><br>
 다른 방법이 있을지는 모르겠다.
 
 * * *
