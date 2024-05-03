@@ -31,8 +31,8 @@ last_modified_at: 2024-01-05
 * * *
 
 ### Apache POI 라이브러리
-Apache 소프트웨어 재단에 의해 개발되었다. <br><br>
-Apache POI는 Excel, Word, PowerPoint와 같은 Microsoft Office 파일 형식을 Java에서 처리할 수 있도록 하는 오픈소스 JAVA 라이브러리이다.
+Excel, Word, PowerPoint와 같은 Microsoft Office 파일 형식을 Java에서 처리할 수 있도록 하는 오픈소스 JAVA 라이브러리이다.<br><br>
+Apache 소프트웨어 재단에 의해 개발되었다.
 
 <br>
 
