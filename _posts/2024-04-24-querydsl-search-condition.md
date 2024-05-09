@@ -90,7 +90,15 @@ member.createdAt.lt(endDateTime) // created_at < '2024-04-24 23:59:59'
 **like**
 ```java
 // 임의로 %
-member.email.contains("%joyoungjae") // LIKE '%joyoungjae'
+member.email.like("%joyoungjae") // LIKE '%joyoungjae'
+```
+
+* * *
+
+**notLike**
+```java
+// 임의로 %
+member.email.notLike("joyoungjae%") // NOT LIKE 'joyoungjae%'
 ```
 
 * * *
@@ -106,7 +114,15 @@ member.email.contains("joyoungjae") // LIKE '%joyoungjae%'
 **startsWith**
 ```java
 // 뒤에 %
-member.email.contains("joyoungjae") // LIKE 'joyoungjae%'
+member.email.startsWith("joyoungjae") // LIKE 'joyoungjae%'
+```
+
+* * *
+
+**endsWith**
+```java
+// 뒤에 %
+member.email.endsWith("joyoungjae") // LIKE '%joyoungjae'
 ```
 
 * * *
