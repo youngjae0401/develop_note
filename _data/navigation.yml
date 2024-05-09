@@ -27,8 +27,8 @@ categories:
   - title: "JAVA"
     url: /categories/java/
     
-  - title: "JavaScript"
-    url: /categories/js/
+  - title: "JPA"
+    url: /categories/jpa/
     
   - title: "DataBase"
     url: /categories/db/
@@ -38,6 +38,9 @@ categories:
     
   - title: "PHP"
     url: /categories/php/
+    
+  - title: "JavaScript"
+    url: /categories/js/
     
   - title: "ETC"
     url: /categories/etc/
