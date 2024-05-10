@@ -1,5 +1,6 @@
 ---
 title: "[JAVA] CK 에디터에서 이미지를 S3에 저장하기"
+description: JAVA - CK 에디터에서 이미지를 S3에 저장해보자
 excerpt: ""
 
 categories:

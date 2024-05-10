@@ -1,5 +1,6 @@
 ---
 title: "[AWS] EC2에서 S3로 파일 업로드"
+description: AWS - EC2에서 S3로 파일 업로드를 해보자
 excerpt: ""
 
 categories:

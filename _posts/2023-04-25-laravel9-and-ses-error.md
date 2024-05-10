@@ -1,5 +1,6 @@
 ---
 title: "Laravel9에서 AWS SES 451 Timeout 에러"
+description: Laravel9에서 AWS SES 451 Timeout 에러를 해결해보자
 excerpt: ""
 
 categories:

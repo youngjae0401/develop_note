@@ -1,5 +1,6 @@
 ---
 title: "[DB] MySQL에서 사용했던 유용한 함수"
+description: MySQL에서 사용했던 유용한 함수를 알아보자
 excerpt: ""
 
 categories:

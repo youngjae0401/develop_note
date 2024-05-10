@@ -1,5 +1,6 @@
 ---
 title: "[DB] PostgreSQL에서 유용한 함수"
+description: PostgreSQL에서 유용한 날짜(date), 문자열(string), 숫자(math), 윈도우(window) 함수를 사용해보자
 excerpt: ""
 
 categories:

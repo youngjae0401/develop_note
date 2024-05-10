@@ -1,5 +1,6 @@
 ---
 title: "[JPA] QueryDSL 동적 쿼리로 검색하기"
+description: JPA QueryDSL에서 동적 쿼리로 조회를 해보자
 excerpt: ""
 
 categories:

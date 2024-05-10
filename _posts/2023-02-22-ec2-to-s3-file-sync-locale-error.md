@@ -1,5 +1,6 @@
 ---
 title: "[AWS] EC2에서 S3로 업로드 시 한글 파일명에 대한 에러"
+description: AWS - EC2에서 S3로 업로드 시 한글 파일명에 대한 에러를 해결해보자
 excerpt: ""
 
 categories:

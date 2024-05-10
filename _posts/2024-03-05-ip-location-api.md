@@ -1,5 +1,6 @@
 ---
 title: "[JAVA] IP 주소로 국가코드를 가져오기(w. IP Location API)"
+description: JAVA Spring Boot에서 IP 주소로 국가코드를 가져와보자. IP Location API를 사용해서!
 excerpt: ""
 
 categories:

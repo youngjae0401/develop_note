@@ -1,5 +1,6 @@
 ---
 title: "[JAVA] 도커 컨테이너에서 셀레니움으로 웹 스크래핑하기"
+description: JAVA - 도커 컨테이너에서 셀레니움으로 웹 스크래핑을 해보자
 excerpt: ""
 
 categories:

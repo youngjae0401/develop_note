@@ -1,5 +1,6 @@
 ---
 title: "[AWS] Laravel9에서 S3 Pre-signed URL 적용"
+description: AWS - Laravel9에서 S3 Pre-signed URL을 적용해보자
 excerpt: ""
 
 categories:

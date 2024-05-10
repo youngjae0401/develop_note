@@ -1,5 +1,6 @@
 ---
 title: "[JPA] 많이 사용하는 QueryDSL 조건 종류"
+description: JPA QueryDSL에서 많이 사용하는 조건 종류를 알아보자
 excerpt: ""
 
 categories:

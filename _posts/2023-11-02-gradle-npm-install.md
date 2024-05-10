@@ -1,5 +1,6 @@
 ---
 title: "[JAVA] Gradle에서 npm install"
+description: JAVA - Gradle에서 npm install 하는 방법
 excerpt: ""
 
 categories:
