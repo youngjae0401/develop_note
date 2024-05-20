@@ -1,5 +1,6 @@
 ---
 title: "Google Search Console 적용"
+description: "Github Blog에 Google Search Console를 적용해보자"
 excerpt: ""
 
 categories:
@@ -7,7 +8,9 @@ categories:
 
 tags:
   - [google]
+  - [jekyll]
   - [blog]
+  - [google search console]
 
 permalink: /blog/google-search-console/
 

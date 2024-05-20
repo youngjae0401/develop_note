@@ -1,5 +1,6 @@
 ---
-title: "[JS] Optional Chaining"
+title: "[JS] Optional Chaining이란?"
+description: "[JS] Optional Chaining에 대해서 자세히 알아보자"
 excerpt: ""
 
 categories:
@@ -7,6 +8,7 @@ categories:
 
 tags:
   - [javascript]
+  - [optional chaining]
 
 permalink: /js/optional-chaining/
 

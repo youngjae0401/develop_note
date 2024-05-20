@@ -1,5 +1,6 @@
 ---
 title: "[ETC] SOLID 원칙"
+description: "SOLID(솔리드) 원칙에 대해서 자세히 알아보자"
 excerpt: ""
 
 categories:
@@ -7,6 +8,7 @@ categories:
 
 tags:
   - [SOLID]
+  - [솔리드원칙]
 
 permalink: /etc/solid-principle/
 

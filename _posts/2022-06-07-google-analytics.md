@@ -1,5 +1,6 @@
 ---
 title: "Google Analytics 적용"
+description: "Github Blog에 Google Analytics를 적용해보자"
 excerpt: ""
 
 categories:
@@ -7,7 +8,10 @@ categories:
 
 tags:
   - [google]
+  - [analytics]
+  - [jekyll]
   - [blog]
+  - [google analytics]
 
 permalink: /blog/google-analytics/
 

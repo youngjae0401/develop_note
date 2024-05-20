@@ -1,5 +1,6 @@
 ---
-title: "Cookie & Session"
+title: "Cookie & Session이란?"
+description: "Cookie(쿠키)와 Session(세션)에 대해서 자세히 알아보자"
 excerpt: ""
 
 categories:
@@ -8,6 +9,8 @@ categories:
 tags:
   - [cookie]
   - [session]
+  - [쿠키]
+  - [세션]
 
 permalink: /web/cookie-session/
 

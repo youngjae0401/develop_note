@@ -1,5 +1,6 @@
 ---
-title: "Docker Compose"
+title: "Docker Compose란?"
+description: "Docker Compose에 대해서 자세히 알아보자"
 excerpt: ""
 
 categories:
@@ -9,6 +10,9 @@ tags:
   - [infra]
   - [docker]
   - [docker compose]
+  - [도커]
+  - [도커컴포즈]
+  - [container]
 
 permalink: /infra/docker-compose/
 

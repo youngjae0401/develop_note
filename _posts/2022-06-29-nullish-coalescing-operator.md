@@ -1,5 +1,6 @@
 ---
-title: "[JS] Nullish Coalescing Operator"
+title: "[JS] Nullish Coalescing Operator이란?"
+description: "[JS] Nullish Coalescing Operator에 대해서 자세히 알아보자"
 excerpt: ""
 
 categories:
@@ -7,6 +8,7 @@ categories:
 
 tags:
   - [javascript]
+  - [nullish coalescing operator]
 
 permalink: /js/nullish-coalescing-operator/
 

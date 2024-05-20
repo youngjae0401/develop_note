@@ -9,6 +9,7 @@ categories:
 tags:
     - [S3]
     - [Laravel]
+    - [라라벨]
 
 permalink: /infra/s3-pre-signed-url/
 

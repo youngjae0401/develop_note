@@ -1,5 +1,6 @@
 ---
 title: "Utterances 적용"
+description: "Github Blog에 Utterances를 적용해보자"
 excerpt: ""
 
 categories:
@@ -7,6 +8,7 @@ categories:
 
 tags:
   - [utterances]
+  - [jekyll]
   - [blog]
 
 permalink: /blog/utterances/
