@@ -13,7 +13,7 @@ tags:
   - [pdf]
   - [pyautogui]
 
-permalink: /etc/screenshot-convet-to-pdf/
+permalink: /etc/screenshot-convert-to-pdf/
 
 toc: true
 toc_sticky: true
