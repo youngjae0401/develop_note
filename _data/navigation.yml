@@ -18,9 +18,6 @@ main:
 # sidebar navigation (categories)
 # 2022.02.15 sidebar update : simple ver.
 categories:
-  - title: "GitHub Blog"
-    url: /categories/github-blog/
-    
   - title: "Web"
     url: /categories/web/
     
@@ -44,6 +41,12 @@ categories:
     
   - title: "JavaScript"
     url: /categories/js/
+    
+  - title: "GitHub"
+    url: /categories/github/
+
+  - title: "GitHub Blog"
+    url: /categories/github-blog/
     
   - title: "ETC"
     url: /categories/etc/
