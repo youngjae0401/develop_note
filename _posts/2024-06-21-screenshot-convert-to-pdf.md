@@ -1,10 +1,10 @@
 ---
-title: "[ETC] 스크린샷을 PDF로 변환 (feat. ebook)"
+title: "[Python] 스크린샷을 PDF로 변환 (feat. ebook)"
 description: "자동으로 스크린샷을 저장하고 PDF로 변환해보자."
 excerpt: ""
 
 categories:
-  - ETC
+  - Python
 
 tags:
   - [ebook]
@@ -13,7 +13,7 @@ tags:
   - [pdf]
   - [pyautogui]
 
-permalink: /etc/screenshot-convert-to-pdf/
+permalink: /python/screenshot-convert-to-pdf/
 
 toc: true
 toc_sticky: true
