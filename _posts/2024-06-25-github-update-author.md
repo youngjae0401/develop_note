@@ -56,3 +56,14 @@ push 커맨드를 실행하면 적용이 된다.
 ```bash
 git push --force --tags origin 'your-branch-name'
 ```
+
+* * *
+
+### 여러 계정의 Repository를 사용할 경우
+만약, git config가 global로 적용되어 있다면 각 Repository별로 git config를 설정해 두어야 한다. <br>
+그렇지 않다면 원하지 않는 계정으로 git history가 남을 수 있다.
+
+```bash
+git config user.name "Jo Youngjae"
+git config user.email joyoungjae0401@gmail.com
+```
